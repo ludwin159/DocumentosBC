@@ -1,0 +1,1308 @@
+{
+	"info": {
+		"_postman_id": "93151ee6-013a-4c60-89f1-bcd0c3125d7b",
+		"name": "Aplicación bancaria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42446149",
+		"_collection_link": "https://bootcamp-8909.postman.co/workspace/Bootcamp-Workspace~2ea722b5-436e-45fc-9da5-64d3f5ac2a60/collection/42446149-93151ee6-013a-4c60-89f1-bcd0c3125d7b?action=share&source=collection_link&creator=42446149"
+	},
+	"item": [
+		{
+			"name": "Microservicio Productos",
+			"item": [
+				{
+					"name": "Clientes",
+					"item": [
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/client",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/client/67b7837fb5d8820d33ca06a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"client",
+										"67b7837fb5d8820d33ca06a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identity\": \"\",\r\n    \"fullName\": \"\",\r\n    \"taxId\": \"20458965322\",\r\n    \"businessName\": \"Tienda Comercial Maria\",\r\n    \"address\": \"Av. Jose Pardo de Zela Nro 223, Perú\",\r\n    \"phone\": \"+51 6598965898\",\r\n    \"email\": \"mariatienda@email.com\",\r\n    \"typeClient\": \"BUSINESS_PYMES_CLIENT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/client",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"client"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"67b7d4f7a472a15d697e2ed5\",\r\n    \"identity\": \"75325632\",\r\n    \"fullName\": \"Mercedes Julca Z. VIP\",\r\n    \"taxId\": \"\",\r\n    \"businessName\": \"\",\r\n    \"address\": \"Jr. Jhordan Jhantu 236, Perú\",\r\n    \"phone\": \"+51 98656532\",\r\n    \"email\": \"vipclient@gmail.com\",\r\n    \"typeClient\": \"PERSONAL_VIP_CLIENT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/client/67b7d4f7a472a15d697e2ed5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"client",
+										"67b7d4f7a472a15d697e2ed5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/client/67b7837fb5d8820d33ca06a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"client",
+										"67b7837fb5d8820d33ca06a5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cuentas Bancarias",
+					"item": [
+						{
+							"name": "Cuenta de Ahorros",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 15.0,\r\n    \"typeBankAccount\": \"SAVING_ACCOUNT\",\r\n    \"limitMovements\": 10,\r\n    \"maxTransactions\": 2,\r\n    \"commissionPercentage\": 0.1,\r\n    \"expirationDate\": 0,\r\n    \"maintenanceCost\": 0.0,\r\n    \"minimumDailyAverageAmount\": 20.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67b7f4120d5e651e706eb3ba\",\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 500.0,\r\n    \"typeBankAccount\": \"CURRENT_ACCOUNT\",\r\n    \"limitMovements\": 15,\r\n    \"maxTransactions\": 2,\r\n    \"commissionPercentage\": 0.1,\r\n    \"expirationDate\": 0,\r\n    \"maintenanceCost\": 0.0,\r\n    \"minimumDailyAverageAmount\": 20.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts/67b7f4120d5e651e706eb3ba",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts",
+												"67b7f4120d5e651e706eb3ba"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cuenta Corriente",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 100.0,\r\n    \"typeBankAccount\": \"CURRENT_ACCOUNT\",\r\n    \"limitMovements\": 0,\r\n    \"maxTransactions\": 3,\r\n    \"commissionPercentage\": 0.1,\r\n    \"expirationDate\": 0,\r\n    \"maintenanceCost\": 20.0,\r\n    \"minimumDailyAverageAmount\": 0.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [\r\n        \"67b7837fb5d8820d33ca06a5\"\r\n    ],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 100.0,\r\n    \"typeBankAccount\": \"CURRENT_ACCOUNT\",\r\n    \"limitMovements\": 0,\r\n    \"maxTransactions\": 3,\r\n    \"commissionPercentage\": 0.1,\r\n    \"expirationDate\": 0,\r\n    \"maintenanceCost\": 20.0,\r\n    \"minimumDailyAverageAmount\": 0.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [\r\n        \"67b7d4f7a472a15d697e2ed5\"\r\n    ],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts/67ba9d1071b08059f6fb5fe2",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts",
+												"67ba9d1071b08059f6fb5fe2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Plazo Fijo",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 250.0,\r\n    \"typeBankAccount\": \"FIXED_TERM_ACCOUNT\",\r\n    \"limitMovements\": 10,\r\n    \"maxTransactions\": 2,\r\n    \"commissionPercentage\": 0.1,\r\n    \"expirationDate\": 25,\r\n    \"maintenanceCost\": 0.0,\r\n    \"minimumDailyAverageAmount\": 20.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67ba9e5671b08059f6fb5fe3\",\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"balance\": 1000.0,\r\n    \"typeBankAccount\": \"SAVING_ACCOUNT\",\r\n    \"limitMovements\": 10,\r\n    \"maxTransactions\": 3,\r\n    \"commissionPercentage\": 0.2,\r\n    \"expirationDate\": 25,\r\n    \"maintenanceCost\": 0.0,\r\n    \"minimumDailyAverageAmount\": 500.0,\r\n    \"authorizedSignatorits\": [],\r\n    \"accountHolders\": [],\r\n    \"movements\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/appbank-microservice/bank-accounts/67ba9e5671b08059f6fb5fe3",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"appbank-microservice",
+												"bank-accounts",
+												"67ba9e5671b08059f6fb5fe3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/bank-accounts",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"bank-accounts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/bank-accounts/67ba9d1071b08059f6fb5fe2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"bank-accounts",
+										"67ba9d1071b08059f6fb5fe2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/bank-accounts/67b812fb0d5e651e706eb3bb",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"bank-accounts",
+										"67b812fb0d5e651e706eb3bb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Resumen de cuentas bancarias por cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/bank-accounts/findAllByClientWithMovements/67b7837fb5d8820d33ca06a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"bank-accounts",
+										"findAllByClientWithMovements",
+										"67b7837fb5d8820d33ca06a5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tarjetas de Crédito",
+					"item": [
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards/67baa25271b08059f6fb5fe4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards",
+										"67baa25271b08059f6fb5fe4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"limitCredit\": 15000.0,\r\n    \"availableBalance\": 15000,\r\n    \"interestRate\": 0.3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"67baa25271b08059f6fb5fe4\",\r\n    \"idClient\": \"67b7837fb5d8820d33ca06a5\",\r\n    \"limitCredit\": 3000,\r\n    \"availableBalance\": 3000,\r\n    \"interestRate\": 0.3,\r\n    \"consumptions\": [],\r\n    \"payments\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards/67baa25271b08059f6fb5fe4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards",
+										"67baa25271b08059f6fb5fe4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards/67baa25271b08059f6fb5fe4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards",
+										"67baa25271b08059f6fb5fe4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Créditos",
+					"item": [
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credits",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credits/67b7a1c025d4a13246de6ee6",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credits",
+										"67b7a1c025d4a13246de6ee6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idClient\": \"67b7d4f7a472a15d697e2ed5\",\r\n    \"totalAmount\": 32000.0,\r\n    \"pendingBalance\": 30000,\r\n    \"interestRate\": 10.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credits",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": \"67baa4a7d4d57462312e8516\",\r\n        \"idClient\": \"67b7d4f7a472a15d697e2ed5\",\r\n        \"totalAmount\": 3200.0,\r\n        \"pendingBalance\": 3000.0,\r\n        \"interestRate\": 10.0,\r\n        \"payments\": []\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credits/67baa4a7d4d57462312e8516",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credits",
+										"67baa4a7d4d57462312e8516"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credits/67baa4a7d4d57462312e8516",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credits",
+										"67baa4a7d4d57462312e8516"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reportes",
+					"item": [
+						{
+							"name": "1. Genera reporte de saldo promedio diario por cliente",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/reports/report-average-balance-daily-by-client/67b7837fb5d8820d33ca06a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"reports",
+										"report-average-balance-daily-by-client",
+										"67b7837fb5d8820d33ca06a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Reporte comisiones por rango de fecha",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/reports/report-all-commissions?from=2025-02-19&to=2025-02-23",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"reports",
+										"report-all-commissions"
+									],
+									"query": [
+										{
+											"key": "from",
+											"value": "2025-02-19"
+										},
+										{
+											"key": "to",
+											"value": "2025-02-23"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Microservicio Movimientos",
+			"item": [
+				{
+					"name": "Consumos de Tarjetas de Crédito",
+					"item": [
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions/67b7837fb5d8820d33ca06a5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions",
+										"67b7837fb5d8820d33ca06a5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Crear",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idCreditCard\": \"67baa25271b08059f6fb5fe4\",\r\n  \"amount\": 30,\r\n  \"description\": \"Compras del super mercado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Actualizar",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"67bb1defc8d3ce0ce35e46d1\",\r\n    \"idCreditCard\": \"67baa25271b08059f6fb5fe4\",\r\n    \"amount\": 30.0,\r\n    \"dateConsumption\": \"2025-02-23T08:09:03.275\",\r\n    \"description\": \"Compras del super mercados\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions/67bb1defc8d3ce0ce35e46d1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions",
+										"67bb1defc8d3ce0ce35e46d1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions/67bb1defc8d3ce0ce35e46d1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions",
+										"67bb1defc8d3ce0ce35e46d1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pagos de Productos de Crédito",
+					"item": [
+						{
+							"name": "Tarjetas de crédito",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"amount\": 20,\r\n  \"idProductCredit\": \"67baa25271b08059f6fb5fe4\",\r\n  \"typeCreditProduct\": \"CREDIT_CARD\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/payments",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"payments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67bb276cc8d3ce0ce35e46d3\",\r\n    \"amount\": 100,\r\n    \"idProductCredit\": \"67b7a1c025d4a13246de6ee6\",\r\n    \"datePayment\": \"2025-02-23T08:40:08.4133201\",\r\n    \"typeCreditProduct\": \"CREDIT_CARD\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/payments/67bb276cc8d3ce0ce35e46d3",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"payments",
+												"67bb276cc8d3ce0ce35e46d3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Creditos",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"amount\": 20,\r\n  \"idProductCredit\": \"67b7a1c025d4a13246de6ee6\",\r\n  \"typeCreditProduct\": \"CREDIT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/payments",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"payments"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67bb2538c8d3ce0ce35e46d2\",\r\n    \"amount\": 20,\r\n    \"idProductCredit\": \"67b7a1c025d4a13246de6ee6\",\r\n    \"datePayment\": \"2025-02-23T08:40:08.4133201\",\r\n    \"typeCreditProduct\": \"CREDIT\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/payments/67bb2538c8d3ce0ce35e46d2",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"payments",
+												"67bb2538c8d3ce0ce35e46d2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/payments",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"payments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/payments/67bb2538c8d3ce0ce35e46d2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"payments",
+										"67bb2538c8d3ce0ce35e46d2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/consumptions/67bb1defc8d3ce0ce35e46d1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"consumptions",
+										"67bb1defc8d3ce0ce35e46d1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movimientos",
+					"item": [
+						{
+							"name": "Deposito",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"typeMovement\": \"DEPOSIT\",\r\n    \"amount\": 100.0,\r\n    \"description\": \"X Deposito\",\r\n    \"commissionAmount\": 0.0,\r\n    \"idBankAccount\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idBankAccountTransfer\": \"\",\r\n    \"idTransfer\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/movements",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"movements"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67bb5382dc7f0a4b010ad66b\",\r\n    \"date\": \"2025-02-23T11:57:11.2235381\",\r\n    \"typeMovement\": \"DEPOSIT\",\r\n    \"amount\": 80.0,\r\n    \"description\": \"X Deposito\",\r\n    \"commissionAmount\": 10.0,\r\n    \"idBankAccount\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idBankAccountTransfer\": \"\",\r\n    \"idTransfer\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/movements/67bb5382dc7f0a4b010ad66b",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"movements",
+												"67bb5382dc7f0a4b010ad66b"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Retiro",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"typeMovement\": \"WITHDRAWAL\",\r\n    \"amount\": 50,\r\n    \"description\": \"Primer Retiro\",\r\n    \"idBankAccount\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idBankAccountTransfer\": \"\",\r\n    \"idTransfer\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/movements",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"movements"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "2. Actualizar",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"67bb4d4ddffa7402c595e8aa\",\r\n    \"date\": \"2025-02-23T10:53:07.5790581\",\r\n    \"typeMovement\": \"WITHDRAWAL\",\r\n    \"amount\": 50,\r\n    \"description\": \"X Retiro\",\r\n    \"commissionAmount\": 0.0,\r\n    \"idBankAccount\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idBankAccountTransfer\": \"\",\r\n    \"idTransfer\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/movements/67bb4d4ddffa7402c595e8aa",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"movements",
+												"67bb4d4ddffa7402c595e8aa"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Transferencia",
+							"item": [
+								{
+									"name": "1. Crear",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"typeMovement\": \"TRANSFER\",\r\n    \"amount\": 100.0,\r\n    \"description\": \"Transferencia\",\r\n    \"commissionAmount\": 0.0,\r\n    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",\r\n    \"idBankAccountTransfer\": \"67ba9d1071b08059f6fb5fe2\",\r\n    \"idTransfer\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:8080/movement-microservice/movements",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"movement-microservice",
+												"movements"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "1. Obtener Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "Aplicación bancaria/Microservicio Movimientos/Movimientos/1. Obtener Todos1. Obtener TodosSaveShareAplicación bancaria/Microservicio Movimientos/Movimientos/1. Obtener Todos1. Obtener TodosSaveSharelocalhost:8080/movement-microservice/movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria/Microservicio Movimientos/Movimientos/2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080/movement-microservice/movements/67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria/Microservicio Movimientos/Movimientos/RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿/movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria/Microservicio Movimientos/Movimientos/2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080/movement-microservice/movements/67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria/Microservicio Movimientos/Movimientos/RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿localhost:8080/movement-microservice/movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria/Microservicio Movimientos/Movimientos/2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080/movement-microservice/movements/67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria/Microservicio Movimientos/Movimientos/RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿/movements",
+									"host": [
+										"Aplicación bancaria"
+									],
+									"path": [
+										"Microservicio Movimientos",
+										"Movimientos",
+										"1. Obtener Todos1. Obtener TodosSaveShareAplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"1. Obtener Todos1. Obtener TodosSaveSharelocalhost:8080",
+										"movement-microservice",
+										"movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080",
+										"movement-microservice",
+										"movements",
+										"67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿",
+										"movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080",
+										"movement-microservice",
+										"movements",
+										"67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿localhost:8080",
+										"movement-microservice",
+										"movementsSendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK19 ms2.52 KBSave ResponseJSON PreviewVisualize2624252122231819201516171213141011789456123        \"date\": \"2025-02-19T23:14:49.667\",    {        \"id\": \"67b7fdea0c81496d36a2eb39\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null    },        \"description\": \"Segundo Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,    },    {        \"id\": \"67b7fdc90c81496d36a2eb38\",        \"idBankAccountTransfer\": null,        \"idTransfer\": null        \"description\": \"Primer Deposito\",        \"commissionAmount\": 0.0,        \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",        \"date\": \"2025-02-19T23:14:49.667\",        \"typeMovement\": \"DEPOSIT\",        \"amount\": 100.0,[    {        \"id\": \"67b7fdba0c81496d36a2eb37\",Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"2. Obtener por ID2. Obtener por IDSaveSharelocalhost:8080",
+										"movement-microservice",
+										"movements",
+										"67b7fdba0c81496d36a2eb37SendParamsAuthorizationHeaders(7)BodyScriptsSettingsCookiesQuery ParamsKeyValueDescriptionBulk EditKeyValueDescriptionBodyCookiesHeaders(2)Test Results200OK16 ms323 BSave ResponseJSON PreviewVisualize1234567891011{    \"id\": \"67b7fdba0c81496d36a2eb37\",    \"date\": \"2025-02-19T23:14:49.667\",    \"typeMovement\": \"DEPOSIT\",    \"amount\": 100.0,    \"description\": \"Primer Deposito\",    \"commissionAmount\": 0.0,    \"idBankAccount\": \"67b7f4120d5e651e706eb3ba\",    \"idBankAccountTransfer\": null,    \"idTransfer\": null}Aplicación bancaria",
+										"Microservicio Movimientos",
+										"Movimientos",
+										"RetiroRetiroSaveRunShareOverviewAuthorizationScriptsRetiroNormal textAdd folder description﻿",
+										"movements"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Obtener por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movement-microservice/movements/67bb55a8dc7f0a4b010ad66d",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movement-microservice",
+										"movements",
+										"67bb55a8dc7f0a4b010ad66d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "5. Eliminar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/appbank-microservice/credit-cards/67baa25271b08059f6fb5fe4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appbank-microservice",
+										"credit-cards",
+										"67baa25271b08059f6fb5fe4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080/appbank-microservice",
+			"type": "default"
+		}
+	]
+}
